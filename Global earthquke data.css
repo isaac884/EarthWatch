@@ -100,17 +100,14 @@
   z-index: 1;
 }
 
-/* 固定底部頁尾 */
 .footer-fixed {
-background-color: rgb(0, 42, 255);
+ background-color: rgb(0, 42, 255);
   color: white;
   text-align: center;
   padding: 15px;
-  /* 移除以下固定屬性 */
-  position: fixed; 
-  bottom: 0;
   width: 100%;
 }
+
 
 /* 內容容器區域高度保留 footer 空間 */
 .intro-section {
