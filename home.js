@@ -39,7 +39,7 @@ async function getTaiwanWeather() {
 
     // 顯示到網頁上
     document.getElementById("weather-info").textContent =
-      `📍 ${city}｜${weather}｜${temp}°C｜濕度：${humidity}%`;
+      `📍 ${city}｜${weather}｜${temp}°C｜Humidity：${humidity}%`;
   } catch (error) {
     document.getElementById("weather-info").textContent = "Unable to load weather data";
     console.error("Error", error);
@@ -73,7 +73,7 @@ async function loadRecentEarthquakes() {
         <div class="mb-3">
           <strong>Location：</strong> ${place}<br>
           <strong>Time：</strong> ${time}<br>
-          <strong>Scale：</strong> M${mag} ｜ 深度：${depth} km<br>
+          <strong>Scale：</strong> M${mag} ｜ Depth：${depth} km<br>
           <strong>Epicenter：</strong> ${lat}°N, ${lon}°E
         </div>
         <hr>
