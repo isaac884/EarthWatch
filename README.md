@@ -48,7 +48,4 @@
 - [OpenWeatherMap API](https://openweathermap.org/)
 - [OpenStreetMap](https://www.openstreetmap.org/)
 
----
-
-## 📂 Folder Structure
 
