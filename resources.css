@@ -1,0 +1,137 @@
+.banner-color {
+  background-color: #053f7a;
+  color: #000dff;
+  font-family: 'Segoe UI', 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+.header-banner {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+}
+
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  color: white;
+}
+
+/* 網站標題 */
+.site-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+/* 導航連結 */
+.nav-links a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* 側邊選單 */
+.menu-button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+  z-index: 1100;
+  position: relative;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #1a1a1a;
+  color: white;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  background-color: #333;
+  display: block;
+}
+
+/* 主要內容區塊 */
+.content {
+  position: relative;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.footer-fixed {
+background-color: rgb(0, 42, 255);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+}
+
+/* 內容容器區域高度保留 footer 空間 */
+.intro-section {
+  padding-bottom: 120px;
+}
+
+.map-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+  text-align: center;
+}
+
+#map {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 這行確保正方形 */
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+
+
