@@ -24,9 +24,6 @@
 - ⚠️ **Disaster Preparedness Tips**  
   Simple reminders to stay alert and prepared for seismic events.
 
-- 📱 **Responsive Design**  
-  Fully responsive UI with Bootstrap and Leaflet.js integration.
-
 ---
 
 ## 🧱 Built With
