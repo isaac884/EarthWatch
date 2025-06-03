@@ -1,7 +1,7 @@
 
    const map = L.map('map', {  center: [20, 120],
   zoom: 3,
-  minZoom: 4,  
+  minZoom: 1,  
   maxZoom: 10, 
   maxBounds: [
     [-85, -180], 
