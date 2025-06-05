@@ -1,6 +1,5 @@
 .banner-color {
   background-color: #053f7a;
-  color: #000dff;
   font-family: 'Segoe UI', 'Noto Sans', sans-serif;
   margin: 0;
   padding: 0;
@@ -74,12 +73,10 @@
   left: 0;
 }
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
 
 .sidebar ul li {
+  list-style-type: none;
+  padding: 0;
   padding: 15px 20px;
 }
 
@@ -108,11 +105,6 @@
   width: 100%;
 }
 
-
-
-.intro-section {
-  padding-bottom: 120px;
-}
 
 .map-container {
   max-width: 600px;
