@@ -1,7 +1,6 @@
 onst startTime = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
 
 
- // 建立 ComCat API URL
  const url = new URL('https://earthquake.usgs.gov/fdsnws/event/1/query');
  url.searchParams.set('format', 'geojson');
  url.searchParams.set('starttime', startTime);
@@ -9,7 +8,7 @@ onst startTime = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
  url.searchParams.set('minmagnitude', '3'); 
  url.searchParams.set('limit', '50');
 
- // 拉取資料並顯示
+ /
  fetch(url)
    .then(res => res.json())
    .then(data => {
