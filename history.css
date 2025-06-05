@@ -3,16 +3,18 @@
     max-width: 900px;
     margin: auto;
   }
-  .quake-card {
-    background-color: white;
-    border-left: 6px solid #007bff;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  .quake-title {
-    font-weight: bold;
-  }
+.quake-card {
+  background-color: white;
+  border-left: 6px solid #007bff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: black;
+}
+
+.quake-title {
+  font-weight: bold;
+}
 
 
 .banner-color {
