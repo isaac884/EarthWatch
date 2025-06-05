@@ -6,7 +6,7 @@ onst startTime = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
  url.searchParams.set('format', 'geojson');
  url.searchParams.set('starttime', startTime);
  url.searchParams.set('orderby', 'time');
- url.searchParams.set('minmagnitude', '4.5'); // 顯示震級 4.5 以上
+ url.searchParams.set('minmagnitude', '3'); 
  url.searchParams.set('limit', '50');
 
  // 拉取資料並顯示
@@ -14,10 +14,10 @@ onst startTime = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
    .then(res => res.json())
    .then(data => {
      const container = document.getElementById('quake-container');
-     container.innerHTML = ''; // 清空
+     container.innerHTML = ''; 
 
      if (data.features.length === 0) {
-       container.innerHTML = '<p>沒有找到地震紀錄。</p>';
+       container.innerHTML = '<p>No earthquake records were found.</p>';
        return;
      }
 
@@ -37,8 +37,8 @@ onst startTime = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
      });
    })
    .catch(err => {
-     document.getElementById('quake-container').innerHTML = '<p>無法載入地震資料。</p>';
-     console.error('錯誤：', err);
+     document.getElementById('quake-container').innerHTML = '<p>Unable to load earthquake data.</p>';
+     console.error('Error：', err);
    });
 
    
