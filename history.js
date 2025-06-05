@@ -1,7 +1,5 @@
- // 取得 7 天前的時間
- const now = new Date();
- const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
- const startTime = sevenDaysAgo.toISOString();
+onst startTime = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+
 
  // 建立 ComCat API URL
  const url = new URL('https://earthquake.usgs.gov/fdsnws/event/1/query');
