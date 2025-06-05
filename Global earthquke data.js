@@ -1,13 +1,13 @@
+const map = L.map('map', {
+  center: [20, 0],
+  zoom: 2,
+  minZoom: 1,
+  maxZoom: 10,
+  maxBounds: [[-85, -180], [85, 180]],
+  maxBoundsViscosity: 1.0
+});
 
-   const map = L.map('map', {  center: [20, 120],
-  zoom: 3,
-  minZoom: 1,  
-  maxZoom: 10, 
-  maxBounds: [
-    [-85, -180], 
-    [85, 180]    
-  ],
-  maxBoundsViscosity: 1.0}).setView([20, 0], 2);
+
 
 
 
