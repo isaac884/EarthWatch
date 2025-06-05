@@ -90,13 +90,6 @@
   display: block;
 }
 
-
-.content {
-  position: relative;
-  padding: 2rem;
-  z-index: 1;
-}
-
 .footer-fixed {
  background-color: rgb(0, 42, 255);
   color: white;
