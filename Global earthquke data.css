@@ -26,14 +26,14 @@
   color: white;
 }
 
-/* 網站標題 */
+
 .site-title {
   font-size: 28px;
   font-weight: bold;
   margin-right: auto;
 }
 
-/* 導航連結 */
+
 .nav-links a {
   margin-left: 20px;
   color: white;
@@ -45,7 +45,7 @@
   text-decoration: underline;
 }
 
-/* 側邊選單 */
+
 .menu-button {
   font-size: 1.5rem;
   background: none;
@@ -93,7 +93,7 @@
   display: block;
 }
 
-/* 主要內容區塊 */
+
 .content {
   position: relative;
   padding: 2rem;
@@ -109,7 +109,7 @@
 }
 
 
-/* 內容容器區域高度保留 footer 空間 */
+
 .intro-section {
   padding-bottom: 120px;
 }
@@ -127,7 +127,7 @@
 
 #map {
   width: 100%;
-  aspect-ratio: 1 / 1; /* 這行確保正方形 */
+  aspect-ratio: 1 / 1; 
   border-radius: 12px;
   margin-top: 10px;
 }
