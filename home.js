@@ -31,22 +31,22 @@ async function getTaiwanWeather() {
     const response = await fetch(url);
     const data = await response.json();
 
-    // 解析 JSON 結果
+    
     const city = data.name;
     const weather = data.weather[0].description;
     const temp = data.main.temp;
     const humidity = data.main.humidity;
 
-    // 顯示到網頁上
+    
     document.getElementById("weather-info").textContent =
-      `📍 ${city}｜${weather}｜${temp}°C｜Humidity：${humidity}%`;
+      `📍${city}｜${weather}｜${temp}°C｜Humidity：${humidity}%`;
   } catch (error) {
     document.getElementById("weather-info").textContent = "Unable to load weather data";
     console.error("Error", error);
   }
 }
 
-// 畫面載入時自動執行
+
 getTaiwanWeather();
 
 async function loadRecentEarthquakes() {
@@ -56,17 +56,17 @@ async function loadRecentEarthquakes() {
     const res = await fetch(url);
     const data = await res.json();
 
-    const quakes = data.features.slice(0, 3); // 取最近50笔数据（你可以自己调整数量）
+    const quakes = data.features.slice(0, 10);
 
-    // 初始化地图 (中心点设定为台湾附近)
+
     const map = L.map('map').setView([23.7, 121], 5);
 
-    // 加入底图
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // 将地震数据标记到地图上
+
     quakes.forEach(q => {
       const lat = q.geometry.coordinates[1];
       const lon = q.geometry.coordinates[0];
