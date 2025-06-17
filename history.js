@@ -1,11 +1,16 @@
-const startTime = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+
+ const now = new Date();
+ const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+ const startTime = sevenDaysAgo.toISOString();
+
+
 
 
  const url = new URL('https://earthquake.usgs.gov/fdsnws/event/1/query');
  url.searchParams.set('format', 'geojson');
  url.searchParams.set('starttime', startTime);
  url.searchParams.set('orderby', 'time');
- url.searchParams.set('minmagnitude', '4.5'); 
+ url.searchParams.set('minmagnitude', '2'); 
  url.searchParams.set('limit', '50');
 
  /
