@@ -13,7 +13,7 @@
  url.searchParams.set('minmagnitude', '2'); 
  url.searchParams.set('limit', '50');
 
- /
+ 
  fetch(url)
    .then(res => res.json())
    .then(data => {
