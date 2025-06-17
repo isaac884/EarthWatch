@@ -5,7 +5,7 @@ const startTime = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
  url.searchParams.set('format', 'geojson');
  url.searchParams.set('starttime', startTime);
  url.searchParams.set('orderby', 'time');
- url.searchParams.set('minmagnitude', '3'); 
+ url.searchParams.set('minmagnitude', '4.5'); 
  url.searchParams.set('limit', '50');
 
  /
