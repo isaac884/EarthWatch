@@ -49,7 +49,6 @@ async function getTaiwanWeather() {
 // 畫面載入時自動執行
 getTaiwanWeather();
 
-
 async function loadRecentEarthquakes() {
   const url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
 
@@ -57,37 +56,47 @@ async function loadRecentEarthquakes() {
     const res = await fetch(url);
     const data = await res.json();
 
-    const quakes = data.features.slice(0, 3); // 前3筆地震
+    const quakes = data.features.slice(0, 3); // 取最近50笔数据（你可以自己调整数量）
 
-    let html = "";
+    // 初始化地图 (中心点设定为台湾附近)
+    const map = L.map('map').setView([23.7, 121], 5);
 
-    quakes.forEach((q, index) => {
+    // 加入底图
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // 将地震数据标记到地图上
+    quakes.forEach(q => {
+      const lat = q.geometry.coordinates[1];
+      const lon = q.geometry.coordinates[0];
       const place = q.properties.place;
       const mag = q.properties.mag;
       const time = new Date(q.properties.time).toLocaleString("zh-TW");
-      const depth = q.geometry.coordinates[2];
-      const lat = q.geometry.coordinates[1].toFixed(2);
-      const lon = q.geometry.coordinates[0].toFixed(2);
 
-      html += `
-        <div class="mb-3">
-          <strong>Location：</strong> ${place}<br>
-          <strong>Time：</strong> ${time}<br>
-          <strong>Scale：</strong> M${mag} ｜ Depth：${depth} km<br>
-          <strong>Epicenter：</strong> ${lat}°N, ${lon}°E
-        </div>
-        <hr>
+      const popupText = `
+        <strong>${place}</strong><br>
+        Time: ${time}<br>
+        Magnitude: M${mag}
       `;
+
+      L.circleMarker([lat, lon], {
+        radius: mag * 2.5, 
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+      }).addTo(map).bindPopup(popupText);
     });
 
-    document.getElementById("earthquake-list").innerHTML = html;
   } catch (error) {
-    document.getElementById("earthquake-list").textContent = "Earthquake data cannot be obtained";
+    document.getElementById("map").innerHTML = "Unable to load map data";
     console.error(error);
   }
 }
 
 loadRecentEarthquakes();
+
+
 
 const tips = [
  "During an earthquake, immediately drop to the ground, take cover, and hold on.",
