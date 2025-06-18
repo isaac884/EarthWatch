@@ -1,11 +1,16 @@
+<!--
+    File: youtube.html
+    Project: EarthWatch Final Project
+    Author: Isaac (Student ID: 12890096)
+    Last updated: 2025-06-18
+    Purpose: HTML page for EarthWatch website
+    Notes:
+      - Navbar toggles .sidebar.active via JS
+      - Banner height fixed at 70px (see CSS)
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-<!-- 
-    Code Function: 
-    This is an earthquake YouTube live page that displays a taiwan YouTube live stream of earthquake monitoring.
-    Date: 16/04/2025
-    Created by: Isaac (Student ID: 12890096)
--->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,32 +23,32 @@
 
 </head>
 <body>
-    <div class="header-banner">
-      <button class="menu-button">☰</button>
-      <div class="sidebar">
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              
-              <li><a href="Global earthquke data.html">Global earthquake data</a></li>
-              <li><a href="youtube.html">Youtube live</a></li>
-              <li><a href="history.html">History of earthquake</a></li>
-              <li><a href="resources.html">About</a></li>
-          </ul>
-      </div>
-      <img src="https://i.postimg.cc/bv3s1Bmf/android-chrome-512x512.png" 
-        alt="logo" 
-        width="40" height="40">
-      <div class="site-title">EarthWatch</div>
+    <div class="header-banner banner-color">
+        
+      <div class="banner-content ">
+          <button class="menu-button">☰</button>
+          <div class="sidebar">
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  
+                  <li><a href="Global earthquke data.html">Global earthquke data</a></li>
+                  <li><a href="youtube.html">Youtube live</a></li>
+                  <li><a href="history.html">History of earthqueke</a></li>
+                  <li><a href="resources.html">About</a></li>
+                  
+              </ul>
+          </div>
+          <img src="https://i.postimg.cc/bv3s1Bmf/android-chrome-512x512.png" 
+            alt="logo" 
+            width="40" height="40">
+          <div class="site-title">EarthWatch - Taiwan Youtube Live</div>
 
           
-    
+      </div>
+
     </div>
 
-
-    <!--
-    This is a YouTube live stream section that displays a live stream of earthquake monitoring.
-    -->
-    <div class="live-container">
+    <div class="youtube-live-container">
         <iframe
             src="https://www.youtube.com/embed/ELjefFuYwbA"
             frameborder="0"
@@ -55,7 +60,7 @@
 
 
 
-    <div class="footer-fixed ">
+        <div class="footer-fixed ">
         <p class="mb-0">&copy; 2025 EarthWatch.<br>
             Source: USGS, OpenWeatherMap<br>
             This website EarthWatch is for display and academic use only, not an official disaster warning system.
@@ -66,4 +71,5 @@
 
 
 </html>
+
 
