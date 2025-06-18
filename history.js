@@ -31,7 +31,7 @@
        const el = document.createElement('div');
        el.className = 'card';
        el.innerHTML = `
-         <div class="title" style="color: black;" >#${i + 1} ${p.place}</div>
+         <div class="quake-title" style="color: black;" >#${i + 1} ${p.place}</div>
          <div style="color: black;">Time：${time}</div>
 
          <div style="color: black;">Magnitude：${p.mag}</div>
