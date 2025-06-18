@@ -1,9 +1,20 @@
+<!--
+    File: index.html
+    Project: EarthWatch Final Project
+    Author: Isaac (Student ID: 12890096)
+    Last updated: 2025-06-18
+    Purpose: HTML page for EarthWatch website
+    Notes:
+      - Navbar toggles .sidebar.active via JS
+      - Banner height fixed at 70px (see CSS)
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- 
     Code Function: 
-    This is an earthquake home page that displays earthquake and weather information.
-    Date: 16/04/2025
+    This is an earthquake information page.
+    Date: 16/03/2025
     Created by: Isaac (Student ID: 12890096)
 -->
 <head>
@@ -20,11 +31,10 @@
 </head>
 
 <body>
-    <!--
-    Header section with navigation and logo
-    -->
-    <div class="header-banner">
-  
+
+    <div class="header-banner banner-color">
+        
+      <div class="banner-content ">
           <button class="menu-button">☰</button>
           <div class="sidebar">
               <ul>
@@ -41,13 +51,14 @@
             width="40" height="40">
           <div class="site-title">EarthWatch</div>
 
+          
+      </div>
+
     </div>
 
     <p class="ms-4 mt-3" id="current-time"></p>
     <hr>
-    <!--
-    Main content section with weather and earthquake information
-    -->
+
     <div class="position-relative text-white">
         <img src="https://i.postimg.cc/RCKwKrnp/pexels-timo-volz-837240-1717928.jpg" 
             class="w-100" 
@@ -72,13 +83,30 @@
     </section>
 
 
-    <!--
-    Footer section with copyright and source information
-    -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="footer-fixed ">
         <p class="mb-0">&copy; 2025 EarthWatch.<br>
-            Source: USGS, OpenWeatherMap<br>
-            This website EarthWatch is for display and academic use only, not an official disaster warning system.
+Source: USGS, OpenWeatherMap<br>
+This website EarthWatch is for display and academic use only, not an official disaster warning system.
         </p>
     </div>
 
