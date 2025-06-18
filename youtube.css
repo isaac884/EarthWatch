@@ -1,4 +1,4 @@
-.youtube-live-container {
+.container {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
@@ -6,7 +6,7 @@
     max-width: 100%;
 }
 
-.youtube-live-container iframe {
+.container iframe {
     position: absolute;
     top: 0;
     left: 0;
