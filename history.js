@@ -17,7 +17,7 @@
  fetch(url)
    .then(res => res.json())
    .then(data => {
-     const container = document.getElementById('quake-container');
+     const container = document.getElementById('container');
      container.innerHTML = ''; 
 
      if (data.features.length === 0) {
@@ -31,7 +31,7 @@
        const el = document.createElement('div');
        el.className = 'card';
        el.innerHTML = `
-         <div class="quake-title" style="color: black;" >#${i + 1} ${p.place}</div>
+         <div class="title" style="color: black;" >#${i + 1} ${p.place}</div>
          <div style="color: black;">Time：${time}</div>
 
          <div style="color: black;">Magnitude：${p.mag}</div>
@@ -41,7 +41,7 @@
      });
    })
    .catch(err => {
-     document.getElementById('quake-container').innerHTML = '<p>Unable to load earthquake data.</p>';
+     document.getElementById('container').innerHTML = '<p>Unable to load earthquake data.</p>';
      console.error('Error：', err);
    });
 
