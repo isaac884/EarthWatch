@@ -29,7 +29,7 @@
        const p = quake.properties;
        const time = new Date(p.time).toLocaleString();
        const el = document.createElement('div');
-       el.className = 'quake-card';
+       el.className = 'card';
        el.innerHTML = `
          <div class="quake-title" style="color: black;" >#${i + 1} ${p.place}</div>
          <div style="color: black;">Time：${time}</div>
