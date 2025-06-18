@@ -1,11 +1,16 @@
+<!--
+    File: history.html
+    Project: EarthWatch Final Project
+    Author: Isaac (Student ID: 12890096)
+    Last updated: 2025-06-18
+    Purpose: HTML page for EarthWatch website
+    Notes:
+      - Navbar toggles .sidebar.active via JS
+      - Banner height fixed at 70px (see CSS)
+-->
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<!-- 
-    Code Function: 
-    This is an earthquake history page that displays historical earthquake records from the last 7 days.
-    Date: 16/03/2025
-    Created by: Isaac (Student ID: 12890096)
--->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,47 +21,47 @@
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <!--
-    Header section with navigation and logo
-  -->
-   <div class="header-banner">
-      <button class="menu-button">☰</button>
-      <div class="sidebar">
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              
-              <li><a href="Global earthquke data.html">Global earthquake data</a></li>
-              <li><a href="youtube.html">Youtube live</a></li>
-              <li><a href="history.html">History of earthquake</a></li>
-              <li><a href="resources.html">About</a></li>
-          </ul>
-      </div>
-      <img src="https://i.postimg.cc/bv3s1Bmf/android-chrome-512x512.png" 
-        alt="logo" 
-        width="40" height="40">
-      <div class="site-title">EarthWatch</div>
+    <div class="header-banner banner-color">
+        
+      <div class="banner-content ">
+          <button class="menu-button">☰</button>
+          <div class="sidebar">
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  
+                  <li><a href="Global earthquke data.html">Global earthquke data</a></li>
+                  <li><a href="youtube.html">Youtube live</a></li>
+                  <li><a href="history.html">History of earthqueke</a></li>
+                  <li><a href="resources.html">About</a></li>
+                  
+              </ul>
+          </div>
+          <img src="https://i.postimg.cc/bv3s1Bmf/android-chrome-512x512.png" 
+            alt="logo" 
+            width="40" height="40">
+          <div class="site-title">EarthWatch | History of earthqueke</div>
 
           
-    
-    </div>
 
+
+      </div>
+
+    </div>
   <h1 class="text-center mb-4">Historical earthquake records</h1>
-  <!-- 
-      Main content section with earthquake history information
-  -->
-  <div class="list" id="container" >
+
+  <div class="earthquake-list" id="quake-container">
     <p>Loading earthquake data.....</p>
   </div>
 
 
 
-  <div class="footer-fixed ">
-    <p class="mb-0">&copy; 2025 EarthWatch.<br>
-      Source: USGS, OpenWeatherMap<br>
-      This website EarthWatch is for display and academic use only, not an official disaster warning system.
-    </p>
-  </div>
-
+      <div class="footer-fixed ">
+        <p class="mb-0">&copy; 2025 EarthWatch.<br>
+ Source: USGS, OpenWeatherMap<br>
+This website EarthWatch is for display and academic use only, not an official disaster warning system.
+        </p>
+    </div>
+  
   <script src="history.js"></script>
 </body>
 </html>
