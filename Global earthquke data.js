@@ -23,7 +23,7 @@ const map = L.map('map', {
       L.geoJSON(data, {
         pointToLayer: function (feature, latlng) {
           return L.circleMarker(latlng, {
-            radius: Math.max(mag * 2, 3),
+            radius: feature.properties.mag * 2,
             fillColor: '#f03',
             color: '#000',
             weight: 1,
