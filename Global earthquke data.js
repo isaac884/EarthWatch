@@ -25,31 +25,43 @@ const map = L.map('map', {
   }).addTo(map);
   // Add OpenStreetMap tile layer to the map for base map visualization
 
+  function chooseColor(depth) {
+    return depth > 90 ? "#ff0000" :
+           depth > 70 ? "#ff6600" :
+           depth > 50 ? "#ff9900" :
+           depth > 30 ? "#ffcc00" :
+           depth > 10 ? "#ccff33" : "#00ff00";
+    }
 
+function markerSize(mag) {
+      return mag > 0 ? mag * 3 : 3;
+    }
 
-  fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
-    .then(response => response.json())
-    .then(data => {
- 
-      L.geoJSON(data, {
-        pointToLayer: function (feature, latlng) {
-          return L.circleMarker(latlng, {
-            radius: feature.properties.mag * 2, // Adjust radius based on magnitude
-            // The radius of the circle marker is proportional to the earthquake magnitude
-            fillColor: '#f03',  //  Hard‑coded red; could map to gradient.
-            color: '#000',
-            weight: 1,
-            opacity: 1,
-            fillOpacity: 0.6
-          }).bindPopup(
-            `<strong>Location：</strong>${feature.properties.place}<br/>
-             <strong>Scale：</strong>${feature.properties.mag}<br/>
-             <strong>Time：</strong>${new Date(feature.properties.time).toLocaleString()}`
-          );
-          // The popup displays the earthquake's location, magnitude, and time.
-        }
-      }).addTo(map);
-    });
+    // 抓取 USGS 當日地震資料
+    fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
+      .then(response => response.json())
+      .then(data => {
+        L.geoJSON(data, {
+          pointToLayer: function (feature, latlng) {
+            const depth = feature.geometry.coordinates[2]; // 第三個是深度
+            const mag = feature.properties.mag;
+
+            return L.circleMarker(latlng, {
+              radius: markerSize(mag),
+              fillColor: chooseColor(depth),
+              color: "#000",
+              weight: 0.5,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(
+              `<strong>Location：</strong>${feature.properties.place}<br/>
+               <strong>Magnitude：</strong>${mag}<br/>
+               <strong>Depth：</strong>${depth} km<br/>
+               <strong>Time：</strong>${new Date(feature.properties.time).toLocaleString()}`
+            );
+          }
+        }).addTo(map);
+      });
 // Fetch earthquake data from USGS and visualize it on the map
 // The data is fetched in GeoJSON format and displayed as circle markers with popups showing details about each earthquake.
 
