@@ -37,13 +37,13 @@ function markerSize(mag) {
       return mag > 0 ? mag * 3 : 3;
     }
 
-    // 抓取 USGS 當日地震資料
+
     fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
       .then(response => response.json())
       .then(data => {
         L.geoJSON(data, {
           pointToLayer: function (feature, latlng) {
-            const depth = feature.geometry.coordinates[2]; // 第三個是深度
+            const depth = feature.geometry.coordinates[2]; 
             const mag = feature.properties.mag;
 
             return L.circleMarker(latlng, {
