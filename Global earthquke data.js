@@ -34,7 +34,7 @@ const map = L.map('map', {
     }
 
 function markerSize(mag) {
-      return mag > 0 ? mag * 3 : 3;
+      return mag > 0 ? mag * 1.5 : 1.5;
     }
 
 
